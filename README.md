@@ -1,7 +1,7 @@
-#Game Watch#
+# Game Watch
 Provides a chess timer style watch for an unlimited amount of players. Synchronizes time over a socket connection
 
-#Features#
+## Features
 * Create a party
 * Configure:
 ** At party creation:
@@ -23,26 +23,26 @@ Provides a chess timer style watch for an unlimited amount of players. Synchroni
 * Use laptop/ipad/tv as a status monitor
 
 
-#Basic workflow#
-# First user connects
-# Party is created
-# Generate room name
-# click mailto link to send room name to other players
-# Party is configured
-# Other players connect to website either by emailed link or directly
-# If not auto joined (query param). provide a way to enter the party using the room name
-# Players configure personal settings
-# Game is started
-# First User's timer is started
-# First user's timer is stopped
-# Second user's timer is started
-# ...
-# Time runs out for first user
-# First user's timer no longer runs
-# End is clicked
-# Reconfigure party with everyone still in it
-# Start new round
-# Timer starts
-# ...
-# reset is clicked
-# same configuration is used
+## Basic workflow
+1. First user connects
+1. Party is created
+1. Generate room name
+1. click mailto link to send room name to other players
+1. Party is configured
+1. Other players connect to website either by emailed link or directly
+1. If not auto joined (query param). provide a way to enter the party using the room name
+1. Players configure personal settings
+1. Game is started
+1. First User's timer is started
+1. First user's timer is stopped
+1. Second user's timer is started
+1. ...
+1. Time runs out for first user
+1. First user's timer no longer runs
+1. End is clicked
+1. Reconfigure party with everyone still in it
+1. Start new round
+1. Timer starts
+1. ...
+1. reset is clicked
+1. same configuration is used
