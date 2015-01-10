@@ -1,0 +1,30 @@
+{
+  "name": "Game-Watch",
+  "version": "0.0.0",
+  "description": "Provides a chess timer style watch for an unlimited amount of players. Synchronizes time over a socket connection",
+  "main": "server",
+  "scripts": {
+    "test": "NODE_ENV=test mocha",
+    "start": "NODE_ENV=development node server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tsimons/Game-Watch.git"
+  },
+  "author": "TJ Simons <t.simons88@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tsimons/Game-Watch/issues"
+  },
+  "homepage": "https://github.com/tsimons/Game-Watch",
+  "dependencies": {
+    "express": "^4.10.7",
+    "lodash": "^2.4.1",
+    "socket.io": "^1.2.1"
+  },
+  "devDependencies": {
+    "should": "^4.4.4",
+    "socket.io-client": "^1.2.1",
+    "supertest": "^0.15.0"
+  }
+}
