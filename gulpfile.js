@@ -20,7 +20,7 @@ gulp.task('css', function () {
         return notify().write(err);
       }
     }))
-    .pipe(gulp.dest('build/css'))
+    .pipe(gulp.dest('client/build/css'))
     .pipe(notify({
       title: 'Sass',
       message: 'Successfully compiled',
@@ -42,7 +42,7 @@ gulp.task('js', function () {
     }))
     .pipe(uglify())
     .pipe(rename('app.js'))
-    .pipe(gulp.dest('build/js'))
+    .pipe(gulp.dest('client/build/js'))
     .pipe(notify({
       title: 'SUCCESS',
       icon: 'assets/js.png'

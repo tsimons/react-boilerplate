@@ -4,7 +4,7 @@
   "description": "Provides a chess timer style watch for an unlimited amount of players. Synchronizes time over a socket connection",
   "main": "server",
   "scripts": {
-    "test": "NODE_ENV=test gulp test",
+    "test": "NODE_ENV=test mocha",
     "start": "NODE_ENV=development node server"
   },
   "repository": {
