@@ -6,7 +6,6 @@ var gulp = require('gulp')
   , livereload = require('gulp-livereload')
   , notify = require('gulp-notify')
   , plumber = require('gulp-plumber')
-  , gulp mocha = require('gulp-mocha')
 ;
 
 gulp.task('css', function () {
@@ -32,15 +31,13 @@ gulp.task('css', function () {
 })
 
 gulp.task('js', function () {
-  return gulp.src('client/js/index.jsx')
+  return gulp.src('client/js/index.js')
     .pipe(plumber({errorHandler: notify.onError({
       title: 'ERROR',
       message: '<%= error.message %>',
       icon: 'assets/js.png'
     })}))
-    .pipe(browserify({
-      extensions: ['.jsx']
-    }))
+    .pipe(browserify())
     .pipe(uglify())
     .pipe(rename('app.js'))
     .pipe(gulp.dest('client/build/js'))
@@ -52,22 +49,10 @@ gulp.task('js', function () {
   ;
 });
 
-gulp.task('test:server', function () {
-  return gulp.src('test/**/*Spec.js')
-    .pipe(mocha({ reporter: 'spec' }))
-  ;
-});
-
-gulp.task('test:client', function () {
-  return gulp.src('client')
-})
-
-gulp.task('test', ['test:server', 'test:client']);
-
 gulp.task('watch', function () {
   livereload.listen();
   console.log('Now listening for changes...');
-  gulp.watch(['client/js/**/*.js', 'client/js/**/*.jsx'], ['js']);
+  gulp.watch(['client/js/**/*.js'], ['js']);
   gulp.watch(['client/sass/**/*.scss'], ['css']);
 })
 
