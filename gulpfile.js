@@ -6,6 +6,7 @@ var gulp = require('gulp')
   , livereload = require('gulp-livereload')
   , notify = require('gulp-notify')
   , plumber = require('gulp-plumber')
+  , gulp mocha = require('gulp-mocha')
 ;
 
 gulp.task('css', function () {
@@ -51,12 +52,25 @@ gulp.task('js', function () {
   ;
 });
 
+gulp.task('test:server', function () {
+  return gulp.src('test/**/*Spec.js')
+    .pipe(mocha({ reporter: 'spec' }))
+  ;
+});
+
+gulp.task('test:client', function () {
+  return gulp.src('client')
+})
+
+gulp.task('test', ['test:server', 'test:client']);
+
 gulp.task('watch', function () {
   livereload.listen();
   console.log('Now listening for changes...');
   gulp.watch(['client/js/**/*.js', 'client/js/**/*.jsx'], ['js']);
   gulp.watch(['client/sass/**/*.scss'], ['css']);
 })
+
 
 gulp.task('default', ['watch', 'js', 'css'], function () {
 });
