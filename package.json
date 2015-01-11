@@ -32,7 +32,10 @@
     "gulp-browserify": "^0.5.1",
     "reactify": "^0.17.1",
     "gulp-rename": "^1.2.0",
-    "gulp-livereload": "^3.2.0"
+    "gulp-livereload": "^3.2.0",
+    "gulp-sass": "^1.2.4",
+    "gulp-plumber": "^0.6.6",
+    "gulp-notify": "^2.1.0"
   },
   "browserify": {
     "transform": [
