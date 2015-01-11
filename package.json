@@ -30,11 +30,18 @@
     "gulp": "^3.8.10",
     "gulp-uglify": "^1.0.2",
     "gulp-browserify": "^0.5.1",
-    "reactify": "^0.17.1"
+    "reactify": "^0.17.1",
+    "gulp-rename": "^1.2.0",
+    "gulp-livereload": "^3.2.0"
   },
   "browserify": {
     "transform": [
-      ["reactify", { "es6": true }]
+      [
+        "reactify",
+        {
+          "es6": true
+        }
+      ]
     ]
   }
 }
