@@ -20,7 +20,7 @@ gulp.task('css', function () {
         return notify().write(err);
       }
     }))
-    .pipe(gulp.dest('build/css'))
+    .pipe(gulp.dest('client/build/css'))
     .pipe(notify({
       title: 'Sass',
       message: 'Successfully compiled',
@@ -31,18 +31,16 @@ gulp.task('css', function () {
 })
 
 gulp.task('js', function () {
-  return gulp.src('client/js/index.jsx')
+  return gulp.src('client/js/index.js')
     .pipe(plumber({errorHandler: notify.onError({
       title: 'ERROR',
       message: '<%= error.message %>',
       icon: 'assets/js.png'
     })}))
-    .pipe(browserify({
-      extensions: ['.jsx']
-    }))
+    .pipe(browserify())
     .pipe(uglify())
     .pipe(rename('app.js'))
-    .pipe(gulp.dest('build/js'))
+    .pipe(gulp.dest('client/build/js'))
     .pipe(notify({
       title: 'SUCCESS',
       icon: 'assets/js.png'
@@ -54,9 +52,10 @@ gulp.task('js', function () {
 gulp.task('watch', function () {
   livereload.listen();
   console.log('Now listening for changes...');
-  gulp.watch(['client/js/**/*.js', 'client/js/**/*.jsx'], ['js']);
+  gulp.watch(['client/js/**/*.js'], ['js']);
   gulp.watch(['client/sass/**/*.scss'], ['css']);
 })
+
 
 gulp.task('default', ['watch', 'js', 'css'], function () {
 });
